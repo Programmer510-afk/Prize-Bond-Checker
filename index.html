@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Prize Bond App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button id="menuBtn">☰</button>
+      <h1 align="center">Prize Bond<br>Checker</h1>
+  </header>
+
+  <nav id="sidebar">
+    <ul>
+      <li onclick="showPage('home')">🏠 Home</li>
+      <li onclick="showPage('insertBond')">➕ Insert Bond</li>
+      <li onclick="showPage('insertResult')">🎯 Insert Result</li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Home Page -->
+    <section id="home" class="page">
+      <h2>🏠 Home</h2>
+      <input type="number" id="searchInput" placeholder="বন্ড নাম্বার লিখুন">
+      <button onclick="searchBond()">Search</button>
+      <div id="searchResult"></div>
+      <button onclick="checkMatches()">ম্যাচ চেক করুন</button>
+      <div id="resultBox"></div>
+      <h3 style="display: flex; justify-content: space-between; align-items: center;">
+        <u>আপনার বন্ডসমূহ:</u>
+        <button id="sortBtn" style="font-size: 18px;">⬇⬆</button>
+      </h3>
+      <ul id="bondListHome"></ul>
+    </section>
+
+    <!-- Sort Overlay -->
+    <div id="sortOverlay" class="hidden">
+      <div class="sortMenu">
+        <h4>সাজানোর অপশন</h4>
+        <ul>
+          <li onclick="sortBondList('asc')">⬆️ Ascending</li>
+          <li onclick="sortBondList('desc')">⬇️ Descending</li>
+          <li onclick="sortBondList('newest')">🆕 Newest First</li>
+          <li onclick="sortBondList('oldest')">🕒 Oldest First</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Insert Bond Page -->
+    <section id="insertBond" class="page hidden">
+      <h2>➕ প্রাইজবন্ড যুক্ত করুন</h2>
+      <input type="number" id="bondInput" placeholder="বন্ড নাম্বার">
+      <button onclick="addBond()">Add</button>
+      <h3><u>আপনার বন্ডসমূহ:</u></h3>
+      <ul id="bondList"></ul>
+    </section>
+
+    <!-- Insert Result Page -->
+    <section id="insertResult" class="page hidden">
+      <h2>🎯 ফলাফল যুক্ত করুন</h2>
+      <input type="number" id="resultInput" placeholder="ফলাফল নাম্বার">
+      <button onclick="addResult()">Add</button>
+      <h3><u>ফলাফলসমূহ:</u></h3>
+      <ul id="resultList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: darkblue;
+  color: ghostwhite;
+  padding: 10px;
+  display: flex;
+  gap: 61px;
+}
+
+#menuBtn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+nav#sidebar {
+  background: #eee;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+nav#sidebar.show {
+  transform: translateX(0);
+}
+
+nav#sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav#sidebar li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.page {
+  padding: 15px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  margin-top: 5px;
+}
+
+/* Sort overlay */
+#sortOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sortMenu {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.sortMenu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sortMenu li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.sortMenu li:hover {
+  background-color: #f0f0f0;
+}
+
+.desktop-mode-on-mobile::before {
+  content: "⚠️ Please disable 'Desktop site' in your browser for proper view.";
+  display: block;
+  background: #ffcc00;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+}
